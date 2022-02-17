@@ -74,11 +74,7 @@ class sfp_snmpwalk(SpiderFootPlugin):
             resultado = subprocess.run(["snmpwalk","-v2c", "-c", "public", eventData, ".1.3.6.1.2.1.1.1.0"], stdout=subprocess.PIPE)
             resultado = resultado.stdout.decode("utf-8") 
             resultado = resultado.split(" ") 
-            #print(resultado[6])
 
-        #    if not data:
-        #        self.sf.error("Unable to perform <ACTION MODULE> on " + eventData)
-        #        return
         except Exception as e:
             self.sf.error("Unable to perform the <ACTION MODULE> on " + eventData + ": " + str(e))
             return
